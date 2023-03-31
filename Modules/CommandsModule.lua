@@ -65,6 +65,7 @@ function module:SetupSpecialCommand()
 		end
 	end)
 	UserInputService.InputEnded:Connect(function(input)
+		if gui.Frame.ConVar.noclip.Value == false then return end
 		if input.KeyCode == Enum.KeyCode.W then
 			options.flyW = false
 			plr.Character.Humanoid.Sit = false
