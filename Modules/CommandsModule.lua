@@ -18,7 +18,7 @@ local cmdslist = {
 		else
 			funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{" Server cvar 'sv_cheats' needs 1 integer, Server cvar is currently : "..tostring(gui.Frame.ConVar.sv_cheats.Value),Color3.fromRGB(255, 44, 44),0},gui) 
 		end end,
-	["noclip"] = function() if gui.Frame.ConVar.sv_cheats.Value == 1 then
+	["noclip"] = function() if gui.Frame.ConVar.sv_cheats.Value == 1 and gui.Frame.ConVar.noclip.Value == false then
 			gui.Frame.ConVar.noclip.Value = true
 			funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{" Noclip Enabled",Color3.fromRGB(225, 225, 225),0},gui)
 		else
