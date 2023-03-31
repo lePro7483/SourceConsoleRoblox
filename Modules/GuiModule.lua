@@ -194,7 +194,7 @@ GoDown.Position = UDim2.new(0.963999987, 0, 0.910000026, 0)
 GoDown.Size = UDim2.new(0, 10, 0, 10)
 GoDown.ZIndex = 2
 GoDown.AutoButtonColor = false
-GoDown.Image = "http://www.roblox.com/asset/?id=6034818379"
+GoDown.Image = "http://www.roblox.com/asset/?id=6034818372"
 GoDown.ImageColor3 = Color3.fromRGB(0, 0, 0)
 GoDown.MouseEnter:Connect(function()
 	GoDown.BackgroundColor3 = Color3.fromRGB(171, 226, 255)
