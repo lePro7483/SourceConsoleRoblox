@@ -2,6 +2,7 @@ local module = {}
 
 local Console = Instance.new("ScreenGui")
 Console.Name = "Console"
+print(gethui())
 Console.Parent = gethui()
 Console.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 local Frame = Instance.new("Frame")
