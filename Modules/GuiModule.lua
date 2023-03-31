@@ -244,7 +244,7 @@ end)
 
 
 
-function ReturnGui()
+function module:ReturnGui()
 	return Console
 end
 return module
