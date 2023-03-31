@@ -16,10 +16,10 @@ local cmdslist = {
 		end end,
 	["noclip"] = function() if gui.Frame.ConVar.sv_cheats.Value == 1 then
 			gui.Frame.ConVar.noclip.Value = true
-			funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{" Noclip Enabled",Color3.fromRGB(225, 196, 79),0},gui)
+			funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{" Noclip Enabled",Color3.fromRGB(225, 225, 225),0},gui)
 		else
 			gui.Frame.ConVar.noclip.Value = false
-			funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{" Noclip Disabled",Color3.fromRGB(225, 196, 79),0},gui) 
+			funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{" Noclip Disabled",Color3.fromRGB(225, 225, 225),0},gui) 
 		end end,
 	["credits"] = function()
 		funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{" Made by StarLagging, Thanks to Valve Team for Inspiration !",Color3.fromRGB(225, 225, 225),0},gui)
