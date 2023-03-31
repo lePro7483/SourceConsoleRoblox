@@ -247,3 +247,4 @@ end)
 function ReturnGui()
 	return Console
 end
+return module
