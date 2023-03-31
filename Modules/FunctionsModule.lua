@@ -1,9 +1,9 @@
 local module = {}
 
-function module:AddOutput(settingtable,valuetable)
+function module:AddOutput(settingtable,valuetable,gui)
 	local Command = Instance.new("TextLabel")
 	Command.Name = "Command"
-	Command.Parent = script.Parent.Parent.ScrollingFrame
+	Command.Parent = gui.Frame.ScrollingFrame
 	Command.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Command.BackgroundTransparency = 1.000
 	Command.Size = UDim2.new(0, 732, 0, 16)
