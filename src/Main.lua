@@ -6,7 +6,7 @@ local funcmodule = loadstring(game:HttpGet("https://raw.githubusercontent.com/le
 local gui = ReturnGui()
 gui.Frame.CmdEnter.MouseButton1Click:Connect(function()
 	task.wait()
-	script.Parent.Parent.CmdTxtBox.Text = ""
+	gui.Frame.CmdTxtBox.Text = ""
 end)
 
 gui.Frame.CmdTxtBox.Changed:Connect(function()
