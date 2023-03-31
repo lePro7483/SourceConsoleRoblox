@@ -1,4 +1,5 @@
 local module = {}
+local gui = nil
 local options = {
 	flyW = false,
 	flyS = false,
@@ -41,7 +42,7 @@ function module:SetupSpecialCommand()
 	UserInputService.InputBegan:Connect(function(input,gPE)
 		if gPE then return end
 		if gui.Frame.ConVar.noclip.Value == false then return end
-		if input.KeyCode == Enum.KeyCode.W and then
+		if input.KeyCode == Enum.KeyCode.W then
 			options.flyW = true
 			while options.flyW do
 				plr.Character.Humanoid.Sit = true
