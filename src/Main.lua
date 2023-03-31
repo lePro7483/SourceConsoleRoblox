@@ -4,6 +4,7 @@ local guimodule = loadstring(game:HttpGet("https://raw.githubusercontent.com/leP
 local cmdmodule = loadstring(game:HttpGet("https://raw.githubusercontent.com/lePro7483/SourceConsoleRoblox/main/Modules/CommandsModule.lua", true))()
 local funcmodule = loadstring(game:HttpGet("https://raw.githubusercontent.com/lePro7483/SourceConsoleRoblox/main/Modules/FunctionsModule.lua", true))()
 gui = ReturnGui()
+cmdmodule:SendGui(gui)
 gui.Frame.CmdEnter.MouseButton1Click:Connect(function()
 	task.wait()
 	gui.Frame.CmdTxtBox.Text = ""
