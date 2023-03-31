@@ -1,6 +1,7 @@
 local module = {}
 
 function module:AddOutput(settingtable,valuetable,gui)
+	print(Instance.new("TextLabel").Name)
 	local Command = Instance.new("TextLabel")
 	Command.Name = "Command"
 	Command.Parent = gui.Frame.ScrollingFrame
