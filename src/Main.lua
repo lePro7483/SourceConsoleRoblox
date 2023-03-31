@@ -14,7 +14,7 @@ gui.Frame.CmdTxtBox.Changed:Connect(function()
 end)
 
 script.Parent.MouseButton1Click:Connect(function()
-	funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{"] "..cmdtext,Color3.fromRGB(225, 225, 225),0.4})
+	funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{"] "..cmdtext,Color3.fromRGB(225, 225, 225),0.4},gui)
 	local answer = cmdmodule:FindCommand(string.lower(cmdtext))
 	local cmdsplt = string.split(cmdtext," ")
 	if answer ~= nil then
@@ -25,7 +25,7 @@ script.Parent.MouseButton1Click:Connect(function()
 		end
 		cmdtext = ""
 	else
-		funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{'Unknown command "'..string.lower(cmdsplt[1])..'"',Color3.fromRGB(225, 225, 225),0})
+		funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{'Unknown command "'..string.lower(cmdsplt[1])..'"',Color3.fromRGB(225, 225, 225),0},gui)
 		cmdtext = ""
 	end
 end)
