@@ -1,5 +1,5 @@
 local module = {}
-local gui = nil
+local gui = gethui().Console
 local funcmodule = loadstring(game:HttpGet("https://raw.githubusercontent.com/lePro7483/SourceConsoleRoblox/main/Modules/FunctionsModule.lua", true))()
 
 local cmdslist = {
@@ -14,7 +14,7 @@ local cmdslist = {
 		else
 			funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{" Server cvar 'sv_cheats' needs 1 integer, Server cvar is currently : "..tostring(game:GetService("ServerScriptService").ConVar.sv_cheats.Value),Color3.fromRGB(255, 44, 44),0},gui) 
 		end end,
-	["noclip"] = function() if gui.Frame.ConVar.sv_cheats.Value = 1 then
+	["noclip"] = function() if gui.Frame.ConVar.sv_cheats.Value == 1 then
 			gui.Frame.ConVar.noclip.Value = true
 			funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{" Yes",Color3.fromRGB(225, 196, 79),0},gui)
 		else
