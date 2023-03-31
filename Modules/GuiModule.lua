@@ -225,10 +225,10 @@ CmdEnter.TextColor3 = Color3.fromRGB(58, 58, 58)
 CmdEnter.TextSize = 14.000
 CmdEnter.TextXAlignment = Enum.TextXAlignment.Left
 CmdEnter.MouseEnter:Connect(function()
-	script.Parent.TextColor3 = Color3.fromRGB(43, 128, 255)
+	CmdEnter.TextColor3 = Color3.fromRGB(43, 128, 255)
 end)
 CmdEnter.MouseLeave:Connect(function()
-	script.Parent.TextColor3 = Color3.fromRGB(58, 58, 58)
+	CmdEnter.TextColor3 = Color3.fromRGB(58, 58, 58)
 end)
 
 
