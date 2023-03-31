@@ -3,7 +3,7 @@ local predictnum = 0
 local cmdmodule = loadstring(game:HttpGet("https://raw.githubusercontent.com/lePro7483/SourceConsoleRoblox/main/Modules/CommandsModule.lua", true))()
 local funcmodule = loadstring(game:HttpGet("https://raw.githubusercontent.com/lePro7483/SourceConsoleRoblox/main/Modules/FunctionsModule.lua", true))()
 local guimodule = loadstring(game:HttpGet("https://raw.githubusercontent.com/lePro7483/SourceConsoleRoblox/main/Modules/GuiModule.lua", true))()
-local gui = ReturnGui
+local gui = ReturnGui()
 gui.Frame.CmdEnter.MouseButton1Click:Connect(function()
 	task.wait()
 	script.Parent.Parent.CmdTxtBox.Text = ""
