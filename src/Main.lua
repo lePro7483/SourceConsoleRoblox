@@ -13,7 +13,7 @@ gui.Frame.CmdTxtBox.Changed:Connect(function()
 	cmdtext = gui.Frame.CmdTxtBox.Text
 end)
 
-script.Parent.MouseButton1Click:Connect(function()
+gui.Frame.CmdEnter.MouseButton1Click:Connect(function()
 	funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{"] "..cmdtext,Color3.fromRGB(225, 225, 225),0.4},gui)
 	local answer = cmdmodule:FindCommand(string.lower(cmdtext))
 	local cmdsplt = string.split(cmdtext," ")
