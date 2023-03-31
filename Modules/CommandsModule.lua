@@ -1,5 +1,8 @@
 local module = {}
-local gui = gethui().Console
+local options = {
+	flyW = false,
+	flyS = false,
+}
 local funcmodule = loadstring(game:HttpGet("https://raw.githubusercontent.com/lePro7483/SourceConsoleRoblox/main/Modules/FunctionsModule.lua", true))()
 
 local cmdslist = {
@@ -20,7 +23,8 @@ local cmdslist = {
 		else
 			gui.Frame.ConVar.noclip.Value = false
 			funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{" Noclip Disabled",Color3.fromRGB(225, 225, 225),0},gui) 
-		end end,
+		end 
+		end,
 	["credits"] = function()
 		funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{" Made by StarLagging, Thanks to Valve Team for Inspiration !",Color3.fromRGB(225, 225, 225),0},gui)
 	end,
@@ -29,6 +33,51 @@ local cmdslist = {
 function module:FindCommand(text)
 	local spltstr = string.split(text," ")
 	return cmdslist[spltstr[1]]
+end
+
+function module:SetupSpecialCommand()
+	local UserInputService = game:GetService("UserInputService")
+	local plr = game.Players.LocalPlayer
+	UserInputService.InputBegan:Connect(function(input,gPE)
+		if gPE then return end
+		if gui.Frame.ConVar.noclip.Value == false then return end
+		if input.KeyCode == Enum.KeyCode.W and then
+			options.flyW = true
+			while options.flyW do
+				plr.Character.Humanoid.Sit = true
+				plr.Character.Head.Velocity = workspace.CurrentCamera.CFrame.LookVector*45 + Vector3.new(0,10,0)
+				for i,v in pairs(plr.Character:GetChildren()) do
+					pcall(function() v.CanCollide = false end)
+				end
+				wait()
+			end
+		elseif input.KeyCode == Enum.KeyCode.S then
+			options.flyS = true
+			while options.flyS do
+				plr.Character.Humanoid.Sit = true
+				plr.Character.Head.Velocity = -workspace.CurrentCamera.CFrame.LookVector*45 + Vector3.new(0,10,0)
+				for i,v in pairs(plr.Character:GetChildren()) do
+					pcall(function() v.CanCollide = false end)
+				end
+				wait()
+			end
+		end
+	end)
+	UserInputService.InputEnded:Connect(function(input)
+		if input.KeyCode == Enum.KeyCode.W then
+			options.flyW = false
+			plr.Character.Humanoid.Sit = false
+			for i,v in pairs(plr.Character:GetChildren()) do
+				pcall(function() if v.Name ~= "HumanoidRootPart" then v.CanCollide = true end end)
+			end
+		elseif input.KeyCode == Enum.KeyCode.S then
+			options.flyS = false
+			plr.Character.Humanoid.Sit = false
+			for i,v in pairs(plr.Character:GetChildren()) do
+				pcall(function() if v.Name ~= "HumanoidRootPart" then v.CanCollide = true end end)
+			end
+		end
+	end)
 end
 
 function module:SendGui(NewGui)
