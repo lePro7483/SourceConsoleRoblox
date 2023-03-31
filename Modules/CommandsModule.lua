@@ -9,10 +9,17 @@ local cmdslist = {
 	["sv_cheats"] = function(val)
 		if tonumber(val) then
 			if tonumber(val) > 1 then val = 1 end
-			--game:GetService("ServerScriptService").ConVar.sv_cheats.Value = tonumber(val)
+			gui.Frame.ConVar.sv_cheats.Value = tonumber(val)
 			funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{" Server cvar 'sv_cheats' changed to "..val,Color3.fromRGB(225, 196, 79),0},gui)
-		else -- tostring(game:GetService("ServerScriptService").ConVar.sv_cheats.Value)
-			funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{" Server cvar 'sv_cheats' needs 1 integer, Server cvar is currently : nil",Color3.fromRGB(255, 44, 44),0},gui) 
+		else
+			funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{" Server cvar 'sv_cheats' needs 1 integer, Server cvar is currently : "..tostring(game:GetService("ServerScriptService").ConVar.sv_cheats.Value),Color3.fromRGB(255, 44, 44),0},gui) 
+		end end,
+	["noclip"] = function() if gui.Frame.ConVar.sv_cheats.Value = 1 then
+			gui.Frame.ConVar.noclip.Value = true
+			funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{" Yes",Color3.fromRGB(225, 196, 79),0},gui)
+		else
+			gui.Frame.ConVar.noclip.Value = false
+			funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{" No",Color3.fromRGB(225, 196, 79),0},gui) 
 		end end,
 	["credits"] = function()
 		funcmodule:AddOutput({"Text","TextColor3","TextTransparency"},{" Made by StarLagging, Thanks to Valve Team for Inspiration !",Color3.fromRGB(225, 225, 225),0},gui)
