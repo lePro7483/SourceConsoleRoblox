@@ -185,6 +185,10 @@ end)
 GoUp.MouseLeave:Connect(function()
 	GoUp.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 end)
+GoUp.MouseButton1Click:Connect(function()
+	local pos = ScrollingFrame.CanvasPosition
+	ScrollingFrame.CanvasPosition = Vector2.new(pos.X,pos.Y - 50)
+end
 local GoDown = Instance.new("ImageButton")
 GoDown.Name = "GoDown"
 GoDown.Parent = Frame
@@ -202,6 +206,10 @@ end)
 GoDown.MouseLeave:Connect(function()
 	GoDown.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 end)
+GoDown.MouseButton1Click:Connect(function()
+	local pos = ScrollingFrame.CanvasPosition
+	ScrollingFrame.CanvasPosition = Vector2.new(pos.X,pos.Y + 50)
+end
 local CmdEnter = Instance.new("TextButton")
 CmdEnter.Name = "CmdEnter"
 CmdEnter.Parent = Frame
