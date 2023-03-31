@@ -1,6 +1,7 @@
+local module = {}
+
 local Console = Instance.new("ScreenGui")
 Console.Name = "Console"
-print(gethui())
 Console.Parent = gethui()
 Console.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 local Frame = Instance.new("Frame")
@@ -229,3 +230,9 @@ end)
 CmdEnter.MouseLeave:Connect(function()
 	script.Parent.TextColor3 = Color3.fromRGB(58, 58, 58)
 end)
+
+
+
+function ReturnGui()
+	return Console
+end
