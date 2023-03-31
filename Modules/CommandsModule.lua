@@ -3,6 +3,7 @@ local module = {}
 local cmdslist = {
 	["echo"] = function(text) module:AddOutput({"Text","TextColor3","TextTransparency"},{text,Color3.fromRGB(225, 225, 225),0}) end,
 	["clear"] = function() for i,v in pairs(gui.Frame.ScrollingFrame:GetChildren()) do if v.ClassName == "TextLabel" then v:Destroy() end end end,
+	["quit"] = function() gui:Destroy() end,
 	["sv_cheats"] = function(val)
 		if tonumber(val) then
 			if tonumber(val) > 1 then val = 1 end
