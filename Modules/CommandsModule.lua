@@ -15,3 +15,10 @@ local cmdslist = {
 		module:AddOutput({"Text","TextColor3","TextTransparency"},{"Made by StarLagging, Thanks to Valve Team for Inspiration !",Color3.fromRGB(225, 225, 225),0})
 	end,
 }
+
+function module:FindCommand(text)
+	local spltstr = string.split(text," ")
+	return cmdslist[spltstr[1]]
+end
+
+return module
