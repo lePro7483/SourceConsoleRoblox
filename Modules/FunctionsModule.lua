@@ -1,7 +1,7 @@
 local module = {}
 
-function module:AddOutput(settingtable,valuetable)
-	local Command = Instance.new("TextLabel",_G.ConsoleGui.Frame.ScrollingFrame)
+function module:AddOutput(settingtable,valuetable,gui)
+	local Command = Instance.new("TextLabel",gui.Frame.ScrollingFrame)
 	Command.Name = "Command"
 	Command.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Command.BackgroundTransparency = 1.000
