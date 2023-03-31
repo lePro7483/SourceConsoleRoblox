@@ -1,7 +1,6 @@
-local module = {}
-
 local Console = Instance.new("ScreenGui")
 Console.Name = "Console"
+print(gethui())
 Console.Parent = gethui()
 Console.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 local Frame = Instance.new("Frame")
@@ -188,7 +187,7 @@ end)
 GoUp.MouseButton1Click:Connect(function()
 	local pos = ScrollingFrame.CanvasPosition
 	ScrollingFrame.CanvasPosition = Vector2.new(pos.X,pos.Y - 50)
-end
+end)
 local GoDown = Instance.new("ImageButton")
 GoDown.Name = "GoDown"
 GoDown.Parent = Frame
@@ -209,7 +208,7 @@ end)
 GoDown.MouseButton1Click:Connect(function()
 	local pos = ScrollingFrame.CanvasPosition
 	ScrollingFrame.CanvasPosition = Vector2.new(pos.X,pos.Y + 50)
-end
+end)
 local CmdEnter = Instance.new("TextButton")
 CmdEnter.Name = "CmdEnter"
 CmdEnter.Parent = Frame
@@ -230,9 +229,3 @@ end)
 CmdEnter.MouseLeave:Connect(function()
 	script.Parent.TextColor3 = Color3.fromRGB(58, 58, 58)
 end)
-
-function ReturnGui()
-	return Console
-end
-
-return module
